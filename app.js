@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', routes);
 
-app.get('/*', (req, res, next) => {
-	res.sendFile(app.get('indexHTMLPath')); 
-});
+// app.get('/*', (req, res, next) => {
+// 	res.sendFile(app.get('indexHTMLPath')); 
+// });
 
 
 app.listen(port, function(){

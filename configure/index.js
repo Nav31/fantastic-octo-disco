@@ -7,9 +7,11 @@ module.exports = function (app) {
   // common way of setting application variables.
   app.setValue = app.set.bind(app);
 
-  app.getValue = function (path) {
-      return app.get(path);
-  };
+  // app.getValue = function (path) {
+  //     return app.get(path);
+  // };
+
+  app.getValue = path => { return app.get(path);};
 
   require('./app-variables')(app);
 
