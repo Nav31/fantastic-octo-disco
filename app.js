@@ -14,13 +14,11 @@ const port = 1337;
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, 'node_modules')));
 
-
 app.use('/api', routes);
 
 app.get('/*', (req, res, next) => {
 	res.sendFile(app.get('indexHTMLPath')); 
 });
-
 
 server.listen(port, function(){
 	console.log('listening to port: ', port);

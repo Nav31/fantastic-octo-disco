@@ -7,12 +7,14 @@ const google = require('../secrets.js').google;
 const twitter = require('twitter');
 const io = require('../app.js');
 
+const frontUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+const backUrl = '&key='+ google.serverKey;
 
 io.on('connection', (socket) => {
 	router.get('/stream/:q', (req, res, next) => {
 		client.stream('statuses/filter', {track: req.params.q}, stream => {
 			stream.on('data', tweet => {
-				socket.emit("tweet", tweet);
+				socket.emit("tweet", tweet.user.location, tweet.coordinates);
 			});
 			stream.on('error', error => {
 				console.log(error);
@@ -20,6 +22,7 @@ io.on('connection', (socket) => {
 		});
 	});
 }); 
+
 // console.log('IM A CLIENT',client)
 router.get('/search/:q', (req, res, next) => {
 	client.get('search/tweets', {q: req.params.q }, (error, tweets, response) => {
@@ -36,17 +39,5 @@ router.get('/favorites', (req, res, next) => {
 	});
 });
 
-// This is a stream of tweets 
-// stream a subject ie Javascript
-// router.get('/stream/:q', (req, res, next) => {
-// 	client.stream('statuses/filter', {track: req.params.q}, stream => {
-// 		stream.on('data', tweet => {
-// 			res.json(tweet);
-// 		});
-// 		stream.on('error', error => {
-// 			console.log(error);
-// 		});
-// 	});
-// });
 
 module.exports = router;
