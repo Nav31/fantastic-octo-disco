@@ -2,13 +2,14 @@
 
 const express = require('express');
 const router = express.Router();
-const client = require('../secrets.js');
+const client = require('../secrets.js').twitter;
+const google = require('../secrets.js').google;
 const twitter = require('twitter');
 
 // console.log('IM A CLIENT',client)
 router.get('/search/:q', (req, res, next) => {
 	client.get('search/tweets', {q: req.params.q }, (error, tweets, response) => {
-		console.log(tweets.statuses[0])
+		console.log(tweets.statuses[0]);
    		res.json(tweets); 
 	});
 });
@@ -21,6 +22,7 @@ router.get('/favorites', (req, res, next) => {
 	});
 });
 
+// This is a stream of tweets 
 // stream a subject ie Javascript
 router.get('/stream/:q', (req, res, next) => {
 	console.log('IM GETTING TO THIS ROUTE');

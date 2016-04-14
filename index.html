@@ -1,13 +1,36 @@
+<!-- <!DOCTYPE html> -->
 
-
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Twitter HeatMap</title>
+	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css"/>
+	<link href"/public/stylesheet.css" rel="stylesheet"/>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- <script src="/public/map.js"></script> -->
 </head>
 <body>
-	<div>
-		<h1>Something</h1>
+	<div class="container-fluid">
+		<h1>Welcome to Twitter HeatMap</h1>
+		<h6>Shows where people are tweeting from about a topic</h6>
+		<input type='text'></input>
+		<br/>
+		<br/>
+		<button type="submit" class="btn btn-primary-outline btn-lg"
+		placeholder="SearchHere:">SUBMIT</button>
+		<div id="map-canvas" style="width: 80vw; height: 50vw; margin-top: 20px"></div>
 	</div>
+	<script> 
+		var initMap = function() {
+		var map = new google.maps.Map(document.getElementById('map-canvas'), {
+			  center: {lat: 40.7073069, lng: -74.0117484},
+			  zoom: 6
+			});
+		}
+		$(document).ready(function() {
+		  initMap();
+		});
+	</script>
+	
+    <script src="https://maps.googleapis.com/maps/api/js?key=API-KEY"></script>
 </body>
 </html>
