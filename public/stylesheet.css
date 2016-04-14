@@ -1,12 +1,13 @@
 
+*{
+	box-sizing: border-box;
+}
 
 #map-canvas {
-  height: 500px;
-/*  border-right: 2px solid #b1a398;
-  border-bottom: 2px solid #b1a398;
-  border-left: 2px solid #b1a398;*/
-  width: 500px; 
-  max-width: none,
+  width: 80vw; 
+  height: 50vw; 
+  margin-top: 20px;
+  max-width: none;
 }
 
 /*style="width: 500px; height: 400px;"*/
