@@ -7,11 +7,11 @@ var rootPath = path.join(__dirname, '../');
 var indexPath = path.join(rootPath, './index.html');
 var faviconPath = path.join(rootPath, './public/favicon.ico');
 
-module.exports = function (app) {
-  app.setValue('projectRoot', rootPath);
-  app.setValue('indexHTMLPath', indexPath);
-  app.setValue('log', logMiddleware);
-  app.setValue('faviconPath', faviconPath);
+module.exports = (app) => {
+	app.setValue('projectRoot', rootPath);
+	app.setValue('indexHTMLPath', indexPath);
+	app.setValue('log', logMiddleware);
+	app.setValue('faviconPath', faviconPath);
 };
 
 
