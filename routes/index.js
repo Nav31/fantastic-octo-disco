@@ -14,16 +14,21 @@ const backUrl = '&key='+ google.serverKey;
 
 io.on('connection', (socket) => {
 	router.get('/stream/:q', (req, res, next) => {
+		//console.log("IM A GET REQ");
 		client.stream('statuses/filter', {track: req.params.q}, stream => {
 			stream.on('data', tweet => {
 				if(tweet.user.location){
-					socket.emit("tweet", getCords(tweet.user.location));
+					getCords(tweet.user.location, function(coords){
+						console.log(coords);
+						socket.emit("tweet", coords);
+					});
 				} 
 			});
 			stream.on('error', error => {
 				console.log(error);
 			});
 		});
+		res.sendStatus(200);
 	});
 }); 
 
