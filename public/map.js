@@ -61,6 +61,6 @@ $(document).ready(function() {
 	    data: getPoints(),
 	    map: map
 	  });
-  }, 499);
+  }, 1000);
 });
 

@@ -27,10 +27,18 @@ io.on('connection', (socket) => {
 			stream.on('error', error => {
 				console.log(error);
 			});
+			// stream.on('end', () => {console.log('stream has been terminated');});
+			socket.on('end', () => {
+				//socket.disconnect(0);
+				stream.destroy();
+			});
 		});
 		//res.sendStatus(200);
 	});
+	
 }); 
+
+
 
 // console.log('IM A CLIENT',client)
 router.get('/search/:q', (req, res, next) => {
