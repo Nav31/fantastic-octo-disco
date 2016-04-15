@@ -12,19 +12,18 @@
 	<script src="mainpage.factory.js" defer></script>
 </head>
 <body>
-	<div class="container-fluid" ng-app="heatmap">
+	<div class="container" ng-app="heatmap">
 		<h1>Welcome to Twitter HeatMap</h1>
 		<h6>Shows where people are tweeting from about a topic</h6>
 		<div ng-controller="mainpageCtrl">
-			<input ng-model= "inputText" type='text' placeholder="Search Here:"></input>
-			<br/>
-			<br/>
+			<input ng-model= "inputText" id="input" type='text' placeholder="Search Here:"></input>
 			<button ng-click="getStream()" type="submit" class="btn btn-primary-outline btn-lg">SUBMIT</button>
 			<button type="button" class="btn btn-danger-outline btn-lg" ng-click="stopStream()">Stop</button>
 					<button type="button" class="btn btn-info-outline btn-lg" ng-click="clearMap()">Clear</button>	
-			<div id="map-canvas"></div>
+			
 		</div>
 	</div>
+	<div id="map-canvas"></div>
     <script src="socket.io/socket.io.js" defer></script>
     <script src='socketio.js' defer></script>
 	<script src="map.js" defer></script>

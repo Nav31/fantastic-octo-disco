@@ -3,11 +3,20 @@
 	box-sizing: border-box;
 }
 
+.container {
+	text-align: center;
+}
+
+#input {
+	margin-right: 25px;
+	margin-top: 20px;
+}
+
 #map-canvas {
-  width: 80vw; 
-  height: 50vw; 
+  width: 100%; 
+  height: 800px; 
   margin-top: 20px;
-  max-width: none;
+  position: center;
 }
 
 /*style="width: 500px; height: 400px;"*/

@@ -6,7 +6,16 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map-canvas'), {
 	  center: {lat: 30, lng: 0},
 	  zoom: 2.0,
-      mapTypeId: google.maps.MapTypeId.SATELLITE
+      mapTypeId: google.maps.MapTypeId.SATELLITE,
+      panControl: false,
+      scrollwheel: false,
+      scaleControl: false,
+      zoomControl: false,
+      zoomControlOptions: false,
+      rotateControl: false,
+      panControlOptions: false,
+      rotateControlOptions: false,
+      draggable: false
   });
 
   // heatmap = new google.maps.visualization.HeatmapLayer({
