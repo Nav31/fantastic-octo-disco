@@ -9,10 +9,10 @@ function initMap() {
       mapTypeId: google.maps.MapTypeId.SATELLITE
   });
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
-    data: getPoints(),
-    map: map
-  });
+  // heatmap = new google.maps.visualization.HeatmapLayer({
+  //   data: getPoints(),
+  //   map: map
+  // });
 }
 
 function toggleHeatmap() {

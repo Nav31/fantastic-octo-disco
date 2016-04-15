@@ -13,6 +13,7 @@ const backUrl = '&key='+ google.serverKey;
 
 
 io.on('connection', (socket) => {
+	socket.emit('end');
 	router.get('/stream/:q', (req, res, next) => {
 		//console.log("IM A GET REQ");
 		client.stream('statuses/filter', {track: req.params.q}, stream => {
@@ -33,7 +34,7 @@ io.on('connection', (socket) => {
 				stream.destroy();
 			});
 		});
-		//res.sendStatus(200);
+		res.sendStatus(200);
 	});
 	
 }); 

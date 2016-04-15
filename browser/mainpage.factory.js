@@ -3,7 +3,7 @@
 app.factory('MainpageFactory', ($http) => {
 	return {
 		getStream: (inputText) => {
-			$http.get("/api/stream/" + inputText);
+			return $http.get("/api/stream/" + inputText);
 		}
 	};
 });
