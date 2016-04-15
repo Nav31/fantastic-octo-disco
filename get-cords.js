@@ -17,8 +17,8 @@ var getCoords = (location, callback) => {
 		}).on('error', (e) => {
 
 		}).on('end', () => {
-			console.log(string);
-			console.log(location);
+			// console.log(string);
+			// console.log(location);
 			if(JSON.parse(string).results[0]){
 				var coordinates = JSON.parse(string).results[0].geometry.location; 
 				//console.log('Coordinates', coordinates)

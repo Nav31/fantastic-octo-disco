@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
 				console.log(error);
 			});
 		});
-		res.sendStatus(200);
+		//res.sendStatus(200);
 	});
 }); 
 
