@@ -17,11 +17,7 @@ app.use(express.static(path.join(__dirname, 'browser')));
 
 app.use('/api', routes);
 
-app.get('/*', (req, res, next) => {
-	res.sendFile(app.get('indexHTMLPath')); 
-});
+app.get('/*', (req, res, next) => {res.sendFile(app.get('indexHTMLPath')); });
 
-server.listen(port, function(){
-	console.log('listening to port: ', port);
-});
+server.listen(port, function(){console.log('listening to port: ', port);});
 

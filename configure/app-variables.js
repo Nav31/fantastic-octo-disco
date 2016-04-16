@@ -14,7 +14,3 @@ module.exports = (app) => {
 	app.setValue('faviconPath', faviconPath);
 };
 
-
-
-//var env = require(path.join(rootPath, './server/env'));
-//app.setValue('env', env);
