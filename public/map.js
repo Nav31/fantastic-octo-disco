@@ -5,8 +5,8 @@ var cordArray = [];
 function initMap() {
   map = new google.maps.Map(document.getElementById('map-canvas'), {
 	  center: {lat: 30, lng: 0},
-	  zoom: 2.0,
-      mapTypeId: google.maps.MapTypeId.SATELLITE,
+	  zoom: 3.0,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
       panControl: false,
       scrollwheel: false,
       scaleControl: false,
@@ -15,13 +15,8 @@ function initMap() {
       rotateControl: false,
       panControlOptions: false,
       rotateControlOptions: false,
-      draggable: false
+      draggable: false,
   });
-
-  // heatmap = new google.maps.visualization.HeatmapLayer({
-  //   data: getPoints(),
-  //   map: map
-  // });
 }
 
 function toggleHeatmap() {
@@ -55,12 +50,8 @@ function changeRadius() {
 function changeOpacity() {
   heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
 }
-console.log('IM A CORD ARRAY',cordArray);
-console.log(heatmap);
-function getPoints() {
-	return cordArray;
-	
-}
+
+function getPoints() {return cordArray;}
 
 $(document).ready(function() {
   initMap();
