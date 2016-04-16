@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Twitter HeatMap</title>
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 	<link href="stylesheet.css" rel="stylesheet">
 	<script src="/angular/angular.js"></script>
@@ -13,10 +14,10 @@
 </head>
 <body>
 	<div class="container" ng-app="heatmap">
-		<h1>Welcome to Twitter HeatMap</h1>
-		<h6>Shows where people are tweeting about a topic</h6>
+		<h1 class="intro title">Welcome to Twitter HeatMap</h1>
+		<h6 class="intro words">Shows where in the world people are tweeting about a topic</h6>
 		<div ng-controller="mainpageCtrl">
-			<input ng-model= "inputText" id="input" type='text' placeholder="Search Here:"></input>
+			<input ng-model= "inputText" id="input" type='text' class="input" placeholder="Search Here:"></input>
 			<button ng-click="getStream()" type="submit" class="btn btn-primary-outline btn-lg">SUBMIT</button>
 			<button type="button" class="btn btn-danger-outline btn-lg" ng-click="stopStream()">Stop</button>
 			<button type="button" class="btn btn-info-outline btn-lg" ng-click="clearMap()">Clear</button>	
@@ -28,4 +29,7 @@
 	<script src="map.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkK7bx5bn7Ebc1-gP1QMWubFEm82cmrxM&libraries=visualization" defer></script>
 </body>
+<footer class='footer'>
+	<p>A Massimo Crapanzano and Navjot Singh Production © </p>
+</footer>
 </html>
